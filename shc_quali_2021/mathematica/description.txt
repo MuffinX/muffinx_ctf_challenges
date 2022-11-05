@@ -1,0 +1,6 @@
+
+
+Are you good at math? For example linear algebra?
+I neither, but I know about theorem solvers and SMT solvers, they'll do that gaussian elimination and more for me. ;)
+
+Get the docker running, and solve the easy challenge! :)

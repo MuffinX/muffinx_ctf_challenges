@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <style>
+      html, body, pre, code, kbd, samp {
+          font-family: "Press Start 2P";
+      }
+    </style>
+    <title>Mathematica</title>
+
+    <script src="/static/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+      function sendInputs() {
+        var a = document.getElementById("input_a").value;
+        var b = document.getElementById("input_b").value;
+        var c = document.getElementById("input_c").value;
+        var d = document.getElementById("input_d").value;
+
+        $.getJSON("check",{
+          a : a,
+          b : b,
+          c : c,
+          d : d
+        },
+        function( jsonData ) {
+          var check = jsonData['check'];
+          var msg = jsonData['msg'];
+
+          var displayResultText = document.getElementById("display_result_text");
+
+          if(check) {
+            displayResultText.className = "nes-text is-success";
+          }
+          else {
+            displayResultText.className = "nes-text is-error";
+          }
+
+          displayResultText.innerHTML = msg;
+
+        });
+      }
+    </script>
+    <br />
+    <center>
+      <br />
+      <div class="nes-container is-rounded" style="text-align:center; width:500px;">
+        << Mathematica >>
+      </div>
+      <br />
+      <div class="nes-container is-rounded" style="text-align:left; width:1100px;">
+          <p>Satisfy the mathematical equation in this python code:</p>
+
+
+          <pre style="color:#000000;background:#ffffff;">
+check_math_statement<span style="color:#808030; ">(</span>a <span style="color:#44aadd; ">&gt;</span> <span style="color:#008c00; ">400000</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span>a <span style="color:#44aadd; ">%</span> <span style="color:#008c00; ">30</span> <span style="color:#44aadd; ">==</span> <span style="color:#008c00; ">5</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span>b <span style="color:#44aadd; ">&gt;</span> <span style="color:#008c00; ">30000000000000000</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span>a<span style="color:#44aadd; ">**</span><span style="color:#008c00; ">2</span> <span style="color:#44aadd; ">&lt;</span> b<span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span>b <span style="color:#44aadd; ">%</span> <span style="color:#008c00; ">2400000000000000</span> <span style="color:#44aadd; ">==</span> <span style="color:#008c00; ">3</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span><span style="color:#008c00; ">2</span><span style="color:#44aadd; ">*</span><span style="color:#808030; ">(</span>a<span style="color:#44aadd; ">+</span>b<span style="color:#808030; ">)</span> <span style="color:#44aadd; ">==</span> c<span style="color:#44aadd; ">+</span><span style="color:#808030; ">(</span>d<span style="color:#44aadd; ">*</span><span style="color:#008c00; ">100</span><span style="color:#808030;">)</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span>d <span style="color:#44aadd; ">&gt;</span> <span style="color:#008c00; ">40000000000</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span><span style="color:#808030; ">(</span>d<span style="color:#44aadd; ">*</span><span style="color:#008c00; ">25</span><span style="color:#808030; ">)</span><span style="color:#44aadd; ">%</span> <span style="color:#008c00; ">4</span> <span style="color:#44aadd; ">==</span> <span style="color:#008c00; ">1</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span>d <span style="color:#44aadd; ">%</span> <span style="color:#008c00; ">99</span> <span style="color:#44aadd; ">==</span> <span style="color:#008c00; ">3</span><span style="color:#808030; ">)</span>
+check_math_statement<span style="color:#808030; ">(</span>d <span style="color:#44aadd; ">%</span> <span style="color:#008c00; ">5</span> <span style="color:#44aadd; ">==</span> <span style="color:#008c00; ">1</span><span style="color:#808030; ">)</span>
+        </pre>
+
+        <p>Inputs:</p>
+        <label for="input_a">a = </label> <input type="text" id="input_a" class="nes-input" style="width:400px;">
+        <label for="input_b">b = </label> <input type="text" id="input_b" class="nes-input" style="width:400px;">
+        <br /><br />
+        <label for="input_c">c = </label> <input type="text" id="input_c" class="nes-input" style="width:400px;">
+        <label for="input_d">d = </label> <input type="text" id="input_d" class="nes-input" style="width:400px;">
+        <br /><br />
+        <button type="button" class="nes-btn is-primary" onclick="sendInputs();">Send Inputs</button>&nbsp;&nbsp;Results: <span id="display_result_text" class="nes-text is-disabled">None</span>
+      </div>
+      <br />
+      <div class="nes-container is-rounded" style="text-align:center; width:500px;">
+        - by muffinx -
+        <br />
+        <br />
+        <a href="https://twitter.com/_muffinx">https://twitter.com/_muffinx</a>
+      </div>
+    </center>
+  </body>
+</html>
