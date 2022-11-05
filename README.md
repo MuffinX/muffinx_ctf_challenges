@@ -4,7 +4,7 @@ All of MuffinX's challenges created for CTFs. :)
 
 | Event  | Challenge Name  |  Categories  | Description  | Challenge  |
 |---|---|---|---|---|
-| Swiss Hacking Challenge Qualification 2021  | mathematica  | coding  | Use z3 / math knowledge.  | [mathematica](../../tree/main/shc_quali_2021/mathematica)  |
+| SHC Quali 2021  | mathematica  | coding  | Use z3 / math knowledge.  | [mathematica](../../tree/main/shc_quali_2021/mathematica)  |
 | Hackvent 2018  | muffinx_ctf  | Attack & Defense  | Single Player Attack & Defense.  | [muffin_ctf_hackvent_2018](https://github.com/MuffinX/muffin_ctf_hackvent_2018)  |
 | Hackvent 2017  | linux_malware  | re, web  | Twitter Botnet inside a docker image, exploit an SQLi in the C2 webserver to send a twitter username, execute the command created by the twitter user on all running docker containers. Mini-A/D between players, IRC botnet inside the container. The goal is to find the solution container to get the flag. | [linux_malware](../../tree/main/hackvent_17/linux_malware)  |
 | Hackvent 2017  | tamagotchi  | pwn  | Use leak & ret2libc  | [tamagotchi](../../tree/main/hackvent_17/tamagotchi)  |
